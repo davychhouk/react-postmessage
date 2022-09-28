@@ -1,4 +1,9 @@
 /node_modules
 
-/example/node_modules
-/example/build
+/example/app1/node_modules
+/example/app1/build
+
+/example/app2/node_modules
+/example/app2/build
+
+.DS_Store
