@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { attachParamsToUrl, Iframe, initRequester } from "react-postmessage";
 import "./App.css";
 
@@ -12,13 +12,17 @@ type Data = {
 };
 
 function App() {
+  const [data, setData] = useState<Data>({ test: "" });
+  const [show, setShow] = useState<boolean>(true);
+
   useEffect(() => {
-    initRequester<Data, Data>({
+    initRequester<Data>({
       url: URL,
       fromOrigin: window?.location?.origin,
-      checkOrigin: false,
+      checkOrigin: true,
       data: testData,
-      hook: () => {},
+      hook: setData,
+      close: () => setShow(false),
     });
   }, []);
 
@@ -32,9 +36,16 @@ function App() {
   return (
     <div className="App">
       <h1>App1</h1>
-      <div style={{ marginTop: 20 }}>
-        <Iframe url={formedURL} width={300} height={300} />
+
+      <div style={{ marginTop: 20, marginBottom: 20 }}>
+        Data: {JSON.stringify(data)}
       </div>
+
+      {show && (
+        <div style={{ marginTop: 20 }}>
+          <Iframe url={formedURL} width={400} height={250} />
+        </div>
+      )}
     </div>
   );
 }

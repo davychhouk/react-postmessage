@@ -1,32 +1,50 @@
 import { useEffect, useState } from "react";
-import { initReceiver, cleanUp } from "react-postmessage";
+import {
+  initReceiver,
+  cleanUp,
+  postMessage,
+  signalClose,
+} from "react-postmessage";
 import "./App.css";
-
-const FROM_ORIGIN = "http://localhost:3000";
 
 type HookData = {
   test: string;
 };
 
 function App() {
+  const [fromOrigin, setFromOrigin] = useState<string>("");
   const [data, setData] = useState<HookData>();
 
   useEffect(() => {
     initReceiver<HookData>({
-      fromOrigin: FROM_ORIGIN,
-      checkOrigin: false,
+      fromOrigin,
+      setFromOrigin,
       hook: setData,
+      checkOrigin: true,
     });
 
     return () => {
       cleanUp();
     };
-  }, []);
+  }, [fromOrigin]);
 
   return (
     <div className="App">
       <h1>App2</h1>
-      <p>Data: {data?.test}</p>
+      {data && (
+        <>
+          <p>Data: {JSON.stringify(data)}</p>
+          <div>
+            <button
+              style={{ marginRight: 10 }}
+              onClick={() => postMessage({ test: "sth from app2" }, fromOrigin)}
+            >
+              Send
+            </button>
+            <button onClick={() => signalClose(fromOrigin)}>Close</button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
