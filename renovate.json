@@ -1,6 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "separateMinorPatch": true,
   "extends": [
-    "config:base"
+    "config:base",
+    "group:all", 
+    "schedule:weekly"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["patch"],
+      "enabled": true
+    }
   ]
 }
