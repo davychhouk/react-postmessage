@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     initRequester<Data>({
       url: URL,
-      fromOrigin: window?.location?.origin,
       checkOrigin: true,
       data: testData,
       hook: setData,

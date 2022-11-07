@@ -3,7 +3,6 @@ import { getOriginFromUrl, getParam } from "./params";
 
 type RequesterArgs = {
   url: string;
-  fromOrigin: string;
   checkOrigin?: boolean;
 };
 export function initRequester<Data>({

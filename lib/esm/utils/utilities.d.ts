@@ -1,6 +1,5 @@
 declare type RequesterArgs = {
     url: string;
-    fromOrigin: string;
     checkOrigin?: boolean;
 };
 export declare function initRequester<Data>({ url, checkOrigin, data, hook, close, }: RequesterArgs & {
