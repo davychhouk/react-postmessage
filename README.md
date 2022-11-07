@@ -1,5 +1,9 @@
 # react-postmessage
 
+![NPM Version](https://img.shields.io/npm/v/@chhoukdavy/react-postmessage)
+![NPM Downloads](https://img.shields.io/npm/dw/@chhoukdavy/react-postmessage)
+![NPM License](https://img.shields.io/npm/l/@chhoukdavy/react-postmessage)
+
 Enable data communication between a react app and its embedded (via embed/iframe) react app.
 
 ## Installation
@@ -7,19 +11,19 @@ Enable data communication between a react app and its embedded (via embed/iframe
 npm:
 
 ```sh
-npm install react-postmessage
+npm install @chhoukdavy/react-postmessage
 ```
 
 yarn:
 
 ```sh
-yarn add react-postmessage
+yarn add @chhoukdavy/react-postmessage
 ```
 
 pnpm:
 
 ```sh
-pnpm add react-postmessage
+pnpm add @chhoukdavy/react-postmessage
 ```
 
 ## How it works
@@ -180,13 +184,13 @@ In you browser, go to [localhost:3000](http://localhost:3000).
 
 ### Utilities
 
-| Name     | Type        | Props                                                                      | Description                               |
-| -------- | ----------- | -------------------------------------------------------------------------- | ----------------------------------------- |
-| `initRequester` | `func` | `url`, `checkOrigin` (Optional), `data` (Optional), `hook` (Optional), `close` (Optional) | Init listener in the origin app.   |
-| `initReceiver`  | `func` | `fromOrigin`, `setFromOrigin`, `checkOrigin` (Optional), `hook`                           |Init listener in the destination app. |
-| `postMessage`   | `func` | `data`, `targetOrigin`                                                                    | Post message back to requester.    |
-| `signalClose`   |`func` |                                                                                           | Signal close from destination app. |
-| `getParam`      | `func` | `href`, `name`                                                                            | Get params (name) from url.            |
+| Name                | Type   | Props                                                                                     | Description                           |
+| ------------------- | ------ | ----------------------------------------------------------------------------------------- | ------------------------------------- |
+| `initRequester`     | `func` | `url`, `checkOrigin` (Optional), `data` (Optional), `hook` (Optional), `close` (Optional) | Init listener in the origin app.      |
+| `initReceiver`      | `func` | `fromOrigin`, `setFromOrigin`, `checkOrigin` (Optional), `hook`                           | Init listener in the destination app. |
+| `postMessage`       | `func` | `data`, `targetOrigin`                                                                    | Post message back to requester.       |
+| `signalClose`       | `func` |                                                                                           | Signal close from destination app.    |
+| `getParam`          | `func` | `href`, `name`                                                                            | Get params (name) from url.           |
 | `attachParamsToUrl` | `func` | `url`, `params`                                                                           | Attach params to url.                 |
 
 ## TODO

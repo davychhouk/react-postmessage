@@ -1,6 +1,6 @@
 {
-  "name": "react-postmessage",
-  "version": "1.0.0",
+  "name": "@chhoukdavy/react-postmessage",
+  "version": "1.0.1",
   "author": "Davy CHHOUK",
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
