@@ -57,7 +57,6 @@ function App() {
       Data >
       {
         url: URL,
-        fromOrigin: window?.location?.origin,
         checkOrigin: true,
         data: testData,
         hook: setData,
