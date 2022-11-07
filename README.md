@@ -181,12 +181,14 @@ In you browser, go to [localhost:3000](http://localhost:3000).
 
 ### Utilities
 
-| Name            | Type   | Props                                                                                     | Description                        |
-| --------------- | ------ | ----------------------------------------------------------------------------------------- | ---------------------------------- | ------------------------------------- |
+| Name     | Type        | Props                                                                      | Description                               |
+| -------- | ----------- | -------------------------------------------------------------------------- | ----------------------------------------- |
 | `initRequester` | `func` | `url`, `checkOrigin` (Optional), `data` (Optional), `hook` (Optional), `close` (Optional) | Init listener in the origin app.   |
-| `initReceiver`  | `func` | `fromOrigin`, `setFromOrigin`, `checkOrigin` (Optional), `hook`                           |                                    | Init listener in the destination app. |
+| `initReceiver`  | `func` | `fromOrigin`, `setFromOrigin`, `checkOrigin` (Optional), `hook`                           |Init listener in the destination app. |
 | `postMessage`   | `func` | `data`, `targetOrigin`                                                                    | Post message back to requester.    |
-| `signalClose`   | `func` |                                                                                           | Signal close from destination app. |
+| `signalClose`   |`func` |                                                                                           | Signal close from destination app. |
+| `getParam`      | `func` | `href`, `name`                                                                            | Get params (name) from url.            |
+| `attachParamsToUrl` | `func` | `url`, `params`                                                                           | Attach params to url.                 |
 
 ## TODO
 
