@@ -40,7 +40,11 @@ In `App1`:
 
 ```javascript
 import { useEffect, useState } from "react";
-import { attachParamsToUrl, Iframe, initRequester } from "react-postmessage";
+import {
+  attachParamsToUrl,
+  Iframe,
+  initRequester,
+} from "@chhoukdavy/react-postmessage";
 import "./App.css";
 
 const URL = "http://localhost:3001";
@@ -104,7 +108,7 @@ import {
   cleanUp,
   postMessage,
   signalClose,
-} from "react-postmessage";
+} from "@chhoukdavy/react-postmessage";
 import "./App.css";
 
 type HookData = {
@@ -122,10 +126,7 @@ function App() {
       hook: setData,
       checkOrigin: true,
     });
-
-    return () => {
-      cleanUp();
-    };
+    return cleanUp();
   }, [fromOrigin]);
 
   return (

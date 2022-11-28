@@ -1,4 +1,4 @@
-export const IFRAME_ID = "react-postmessage-iframe";
+export const TARGET_ID = "@chhoukdavy/react-postmessage-target-window-id";
 export const TYPES = {
   handshake: "handshake",
   request: "request",

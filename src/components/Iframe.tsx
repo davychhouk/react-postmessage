@@ -1,5 +1,5 @@
 import React from "react";
-import { IFRAME_ID } from "../constants";
+import { TARGET_ID } from "../constants";
 
 type Props = {
   url: string;
@@ -12,5 +12,5 @@ export const Iframe = ({
   height = 450,
   width = 450,
 }: Props): JSX.Element => (
-  <iframe id={IFRAME_ID} src={url} width={width} height={height} />
+  <iframe id={TARGET_ID} src={url} width={width} height={height} />
 );

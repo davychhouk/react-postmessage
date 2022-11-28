@@ -1,6 +1,6 @@
 export declare const getOriginFromUrl: (url: string) => string;
 export declare const getParam: (href: string, name: string) => string | null;
-declare type Param = {
+type Param = {
     name: string;
     value: string | undefined;
 };

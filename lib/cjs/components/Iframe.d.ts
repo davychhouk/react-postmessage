@@ -1,5 +1,5 @@
 /// <reference types="react" />
-declare type Props = {
+type Props = {
     url: string;
     height?: number | string | undefined;
     width?: number | string | undefined;

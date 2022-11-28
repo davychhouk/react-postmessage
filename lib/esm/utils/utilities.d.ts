@@ -1,4 +1,4 @@
-declare type RequesterArgs = {
+type RequesterArgs = {
     url: string;
     checkOrigin?: boolean;
 };
@@ -7,7 +7,7 @@ export declare function initRequester<Data>({ url, checkOrigin, data, hook, clos
     hook?: (args: Data) => void;
     close?: () => void;
 }): void;
-declare type ResponderArgs = {
+type ResponderArgs = {
     fromOrigin: string;
     setFromOrigin: (o: string) => void;
     checkOrigin?: boolean;

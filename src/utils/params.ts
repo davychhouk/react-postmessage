@@ -1,5 +1,6 @@
 export const getOriginFromUrl = (url: string) => {
-  return new URL(url)?.origin;
+  const cleanedHref = url?.replace("#", "");
+  return new URL(cleanedHref)?.origin;
 };
 
 export const getParam = (href: string, name: string): string | null => {
@@ -36,6 +37,5 @@ export const attachParamsToUrl = (url: string, params: Param[]): string => {
       }
     }
   });
-
   return attachedUrl;
 };

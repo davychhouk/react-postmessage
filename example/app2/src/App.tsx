@@ -4,7 +4,7 @@ import {
   cleanUp,
   postMessage,
   signalClose,
-} from "react-postmessage";
+} from "@chhoukdavy/react-postmessage";
 import "./App.css";
 
 type HookData = {
@@ -22,10 +22,7 @@ function App() {
       hook: setData,
       checkOrigin: true,
     });
-
-    return () => {
-      cleanUp();
-    };
+    return cleanUp();
   }, [fromOrigin]);
 
   return (

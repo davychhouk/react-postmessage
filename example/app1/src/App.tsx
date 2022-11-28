@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { attachParamsToUrl, Iframe, initRequester } from "react-postmessage";
+import {
+  attachParamsToUrl,
+  initRequester,
+  Iframe,
+} from "@chhoukdavy/react-postmessage";
 import "./App.css";
 
 const URL = "http://localhost:3001";
-const testData = {
+const TEST_DATA = {
   test: "sth from app1",
 };
 
@@ -18,8 +22,8 @@ function App() {
   useEffect(() => {
     initRequester<Data>({
       url: URL,
+      data: TEST_DATA,
       checkOrigin: true,
-      data: testData,
       hook: setData,
       close: () => setShow(false),
     });
@@ -28,7 +32,7 @@ function App() {
   const formedURL = attachParamsToUrl(URL, [
     {
       name: "fromOrigin",
-      value: "http://localhost:3000",
+      value: window?.location?.origin,
     },
   ]);
 

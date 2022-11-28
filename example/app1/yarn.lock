@@ -1082,6 +1082,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@chhoukdavy/react-postmessage@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@chhoukdavy/react-postmessage/-/react-postmessage-1.0.1.tgz#bf5c9fb5092acf27b25fe591897fb24dc95a442d"
+  integrity sha512-UmlNeAbmpGGajg5EN/xBuTtRcMkNLL2B0IxUp5OGzymLVcQj5j2drKVDtiCgV2gvwbsOd8nWnBdaDk+FGJeNjg==
+
 "@csstools/normalize.css@*":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-12.0.0.tgz#a9583a75c3f150667771f30b60d9f059473e62c4"

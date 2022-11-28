@@ -1,4 +1,4 @@
-import { IFRAME_ID, TYPES } from "../constants";
+import { TARGET_ID, TYPES } from "../constants";
 import { getOriginFromUrl, getParam } from "./params";
 
 type RequesterArgs = {
@@ -18,7 +18,7 @@ export function initRequester<Data>({
 }) {
   if (window && document) {
     const iframeElement = document?.getElementById(
-      IFRAME_ID
+      TARGET_ID
     ) as HTMLIFrameElement;
     const iframeWindow = iframeElement?.contentWindow;
 
@@ -92,7 +92,7 @@ export function initReceiver<Data>({
         const type = e?.data?.type;
         const payload = e?.data?.payload;
         if (type === TYPES.request && payload) {
-          hook(payload);
+          hook && hook(payload);
           return;
         }
       },
@@ -104,8 +104,8 @@ export function initReceiver<Data>({
      */
     const origin = getParam(window?.location?.href, "fromOrigin");
     if (origin) {
-      setFromOrigin(origin);
       window?.parent?.postMessage({ type: TYPES.handshake }, origin);
+      setFromOrigin(origin);
     }
   }
 }
